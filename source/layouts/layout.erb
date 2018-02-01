@@ -5,15 +5,40 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Middleman" %></title>
-    <link rel="stylesheet" href="https://use.typekit.net/fmz1vun.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fmz1vun.css?123">
+    <script src="javascripts/lib/jquery-3.2.1.min.js"></script>
+    <script src="javascripts/lib/barba.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <div id="main">
+    <div id="barba-wrapper">
       <%= yield %>
-    <div>
+    </div>
+    <nav class="pagenav">
+      <div class="pagenav-item top">
+        <a href="about.html" class="pagenav-btn btn-top">Up</a>
+        <span>About</span>
+      </div>
+      <div class="pagenav-item right">
+        <span>Work</span>
+        <a class="pagenav-btn btn-right">Right</a>
+      </div>
+      <div class="pagenav-item left">
+        <a class="pagenav-btn btn-left">Left</a>
+        <span>Photography</span>
+      </div>
+      <div class="pagenav-item bottom">
+        <span>Contact</span>
+        <a class="pagenav-btn btn-bottom">Bottom</a>
+      </div>
+    </nav>
   </body>
 </html>

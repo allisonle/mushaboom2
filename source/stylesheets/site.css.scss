@@ -1,30 +1,127 @@
+@import 'fonts';
+@import 'about';
+
 body {
   color: #333;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
+  font-family: 'europa', sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   padding: 0;
   margin: 0;
   text-align: center;
+  background-color: #222;
 }
 
-#main {
-  background-image: url(/images/bg.jpg);
+.pagenav {
+  position: absolute;
+  pointer-events: none;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+}
+
+.pagenav-item {
+  position: absolute;
+  &.top, &.bottom { left: calc(50% - 1.5em); }
+  &.left, &.right { top: calc(50% - 1.5em); }
+  &.right { right: 0; }
+  &.bottom { bottom: 0; }
+
+  span {
+    color: white;
+    font-family: 'soleil', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    letter-spacing: 0.06rem;
+  }
+
+  &.top span {
+    display: block;
+    margin-top: 4px;
+  }
+  &.right span {
+    margin-right: -6px;
+    transform: rotate(90deg);
+  }
+  &.left span {
+    transform: rotate(270deg);
+    margin-left: -40px;
+  }
+  &.bottom span {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+.pagenav-btn {
+  border: 0;
+  background: white;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+  width: 2.2em;
+  height: 2.2em;
+  cursor: pointer;
+  pointer-events: auto;
+  align-items: flex-start;
+  display: inline-block;
+  &:hover {
+    width: 2.4em;
+    height: 2.4em;
+    color: transparent;
+    transition: 0.2s ease-in-out;
+  }
+  &.btn-top {
+    -webkit-clip-path: polygon(51% 53%, 0% 100%, 100% 100%);
+    clip-path: polygon(51% 53%, 0% 100%, 100% 100%);
+  }
+  &.btn-right {
+    top: 50%;
+    right: 0;
+    -webkit-clip-path: polygon(51% 53%, 0 0, 0 100%);
+    clip-path: polygon(51% 53%, 0 0, 0 100%);
+  }
+  &.btn-left {
+    top: 50%;
+    left: 0;
+    -webkit-clip-path: polygon(51% 53%, 100% 100%, 100% 0);
+    clip-path: polygon(51% 53%, 100% 100%, 100% 0);
+  }
+  &.btn-bottom {
+    bottom: 0px;
+    -webkit-clip-path: polygon(51% 53%, 100% 0, 0 0);
+    clip-path: polygon(51% 53%, 100% 0, 0 0);
+  }
+}
+
+.barba-container {
   width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: center;
+  position: relative;
+  &.homie { background-image: url(/images/bg.jpg); }
+  &.about { background-image: url(/images/bg_about.jpg); }
+}
+
+.home-link {
+  position: absolute;
+  left: 18px;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'europa', sans-serif;
 }
 
 h1 {
   top: 39vh;
   font-size: 92px;
-  font-family: 'soleil';
+  font-family: 'europa', sans-serif;
   color: white;
   position: relative;
   margin: 0px !important;
-  font-weight: 600;
+  font-weight: 700;
   .invert {
     color: #464040;
   }
@@ -32,14 +129,48 @@ h1 {
 
 a {
   color: rgba(#000, 0.7);
-
   &:focus,
   &:hover {
     color: rgba(#000, 0.6);
   }
 }
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+.subtitle {
+  position: relative;
+  top: calc(39vh + 16px);
+  font-family: 'europa', sans-serif;
+  font-size: 19px;
+
+  h3 {
+    margin: 5px 0px;
+  }
+
+  .soc-icons {
+    a {
+      text-decoration: none;
+      color: transparent;
+      width: 26px;
+      display: inline-block;
+      &:before {
+        font-family: 'icomoon';
+        color: #222;
+        line-height: 19px;
+        display: block;
+      }
+      &:hover {
+        &:before {
+          color: #7198b6;
+          transition: 0.2s ease;
+        }
+      }
+    }
+    .email-soc:before { content: '\e603'; }
+    .insta-soc:before { content: '\e600'; }
+    .github-soc:before { content: '\e605'; }
+    .linkedin-soc:before { content: '\e606'; }
+    .fb-soc:before { content: '\e604'; }
+    .linkedin-soc:before, .fb-soc:before {
+      line-height: 22px;
+    }
+  }
 }
