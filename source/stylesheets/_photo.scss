@@ -1,0 +1,20 @@
+.photo-content {
+  width: 300px;
+  top: 30vh;
+  position: relative;
+  right: 46vw;
+  float: right;
+  font-size: 3.2rem;
+  line-height: 3.4rem;
+  text-align: right;
+  font-weight: bolder;
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+  a {
+    color: #E5ECF3DE;
+    text-decoration: none;
+    &:hover { color: #99433A; }
+  }
+}

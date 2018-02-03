@@ -1,8 +1,26 @@
+const DIRECTIONS = {
+  down: [{top: '-100vh'}, {top: '100vh'}, {top: '0px'}],
+  right: [{left: '-100vw'}, {left: '100vw'}, {left: '0px'}],
+  left: [{left: '100vw'}, {left: '-100vw'}, {left: '0px'}],
+  up: [{top: '100vh'}, {top: '-100vh'}, {top: '0px'}]
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   Barba.Pjax.init();
   Barba.Prefetch.init();
+  let lastHeaderState = false;
+  let currentDirection = 'up'
+
   Barba.Dispatcher.on('linkClicked', function(el) {
-    console.log("HERE WE GOOOOOOO");
+    currentDirection = $(el).data('direction');
+  });
+
+  Barba.Dispatcher.on('newPageReady', function(curr, prev, el) {
+    $homeLink = $('.home-link')
+    if ($(el).hasClass('homie') != lastHeaderState) {
+      $homeLink.fadeToggle();
+      lastHeaderState = !lastHeaderState;
+    } 
   });
 
   var HideShowTransition = Barba.BaseTransition.extend({
@@ -11,14 +29,16 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     movePage: function() {
-      $(this.oldContainer).animate({top: "-100vh"}, 600);
-      $(this.newContainer).css({
+      const pos = DIRECTIONS[currentDirection];
+      console.log(pos);
+      $(this.oldContainer).animate(pos[0], 600);
+      let newCss = {
         visibility : 'visible',
-        position: 'fixed',
-        top: '100vh'
-      });
+        position: 'fixed'
+      };
+      $(this.newContainer).css(Object.assign(newCss, pos[1]));
 
-      $(this.newContainer).animate({top: '0px'}, 600, () => {
+      $(this.newContainer).animate(pos[2], 600, () => {
         this.done();
       });
     },

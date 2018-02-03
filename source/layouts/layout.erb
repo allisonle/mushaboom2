@@ -19,25 +19,30 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
+    <div class="home-link <%= current_page.data.name %>">
+      <a href="index.html" data-direction='up'>
+        <h3>Allison Le</h3>
+      </a>
+    </div>
     <div id="barba-wrapper">
       <%= yield %>
     </div>
     <nav class="pagenav">
       <div class="pagenav-item top">
-        <a href="about.html" class="pagenav-btn btn-top">Up</a>
-        <span>About</span>
+        <a href="about.html" class="pagenav-btn btn-top" data-direction="up">About</a>
+        <span>about</span>
       </div>
       <div class="pagenav-item right">
-        <span>Work</span>
-        <a class="pagenav-btn btn-right">Right</a>
+        <span>work</span>
+        <a class="pagenav-btn btn-right" data-direction="right">Work</a>
       </div>
       <div class="pagenav-item left">
-        <a class="pagenav-btn btn-left">Left</a>
-        <span>Photography</span>
+        <a href="photo.html" class="pagenav-btn btn-left" data-direction="left">Photo</a>
+        <span>photography</span>
       </div>
       <div class="pagenav-item bottom">
-        <span>Contact</span>
-        <a class="pagenav-btn btn-bottom">Bottom</a>
+        <span>contact</span>
+        <a href="contact.html" class="pagenav-btn btn-bottom" data-direction="down">Contact</a>
       </div>
     </nav>
   </body>

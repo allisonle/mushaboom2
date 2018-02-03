@@ -1,5 +1,6 @@
 @import 'fonts';
 @import 'about';
+@import 'photo';
 
 body {
   color: #333;
@@ -36,6 +37,7 @@ body {
     font-weight: 600;
     display: inline-block;
     letter-spacing: 0.06rem;
+    text-shadow: 1px 1px 3px #272727b3;
   }
 
   &.top span {
@@ -67,7 +69,7 @@ body {
   pointer-events: auto;
   align-items: flex-start;
   display: inline-block;
-  &:hover {
+  &:hover, &:focus {
     width: 2.4em;
     height: 2.4em;
     color: transparent;
@@ -104,19 +106,28 @@ body {
   position: relative;
   &.homie { background-image: url(/images/bg.jpg); }
   &.about { background-image: url(/images/bg_about.jpg); }
+  &.photo { background-image: url(/images/bg_photo.jpg); }
 }
 
 .home-link {
   position: absolute;
+  top: 18px;
   left: 18px;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 800;
   font-family: 'europa', sans-serif;
+  z-index: 100;
+  h3 { margin: 0 }
+  a {
+    color: #F1E2CE;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px #2727272e;
+  }
 }
 
 h1 {
   top: 39vh;
-  font-size: 92px;
+  font-size: 6.2rem;
   font-family: 'europa', sans-serif;
   color: white;
   position: relative;
@@ -124,6 +135,9 @@ h1 {
   font-weight: 700;
   .invert {
     color: #464040;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 3.6rem;
   }
 }
 
