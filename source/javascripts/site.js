@@ -8,7 +8,7 @@ const DIRECTIONS = {
 document.addEventListener("DOMContentLoaded", function() {
   Barba.Pjax.init();
   Barba.Prefetch.init();
-  let lastHeaderState = false;
+  let lastHeaderState = true;
   let currentDirection = 'up'
 
   Barba.Dispatcher.on('linkClicked', function(el) {

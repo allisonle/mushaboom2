@@ -1,0 +1,162 @@
+.contact-content {
+  position: relative;
+  top: 16vh;
+  .soc-icons {
+    position: relative;
+    margin: 10px auto 0px;
+  }
+
+  .soc-icons a {
+    font-size: 20px;
+    width: 32px;
+    &:before { color: #8FACE5; }
+  }
+}
+
+#contact-form {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+  background: #859DD040;
+  padding: 32px;
+  box-sizing: border-box;
+
+  label {
+    font-weight: 400;
+    cursor: pointer;
+  }
+
+  p {
+    color: #CACBD0;
+    font-size: 1.2rem;
+    font-family: 'europa', sans-serif;
+    margin: 0px;
+    padding: 3px 0px;
+  }
+
+  textarea,
+  input {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    text-align: center;
+    background: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 1);
+    max-width: 90%;
+    padding: 0.3rem;
+    border: 2px solid rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    cursor: text;
+    font-family: 'europa', sans-serif;
+  }
+
+  textarea {
+    text-align: left;
+    resize: none;
+    width: 90%;
+    border-color: rgba(255, 255, 255, 0)
+  }
+
+  textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 1);
+  }
+
+  textarea:focus:required:valid {
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  textarea:required:valid {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  input {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    margin: 0px 8px;
+  }
+
+  input:required,
+  textarea:required {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  input:focus {
+    border-bottom: 2px solid rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  input:required:valid {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  input:required:invalid {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  ::-webkit-input-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  :-ms-input-placeholder {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .expanding {
+    vertical-align: top;
+  }
+
+  .send-icn {
+    fill: rgba(255, 255, 255, 1)
+  }
+
+  .send-icn:hover {
+    fill: rgba(0, 0, 0, 1);
+    cursor: pointer;
+  }
+
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 12px 0px 0px;
+    width: 200px;
+    line-height: 40px;
+    border-radius: 3px;
+    background-color: #D67152;
+    color: #C04D2A;
+    font-family: 'europa', sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #DA7E62;
+  }
+}

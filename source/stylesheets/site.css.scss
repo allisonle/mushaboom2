@@ -1,6 +1,7 @@
 @import 'fonts';
 @import 'about';
 @import 'photo';
+@import 'contact';
 
 body {
   color: #333;
@@ -104,12 +105,14 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  &.homie { background-image: url(/images/bg.jpg); }
-  &.about { background-image: url(/images/bg_about.jpg); }
-  &.photo { background-image: url(/images/bg_photo.jpg); }
+  &.homie   { background-image: url(/images/bg.jpg); }
+  &.about   { background-image: url(/images/bg_about.jpg); }
+  &.photo   { background-image: url(/images/bg_photo.jpg); }
+  &.contact { background-image: url(/images/bg_contact.jpg); }
 }
 
 .home-link {
+  display: none;
   position: absolute;
   top: 18px;
   left: 18px;
@@ -158,33 +161,33 @@ a {
   h3 {
     margin: 5px 0px;
   }
+}
 
-  .soc-icons {
-    a {
-      text-decoration: none;
-      color: transparent;
-      width: 26px;
-      display: inline-block;
+.soc-icons {
+  a {
+    text-decoration: none;
+    color: transparent;
+    width: 26px;
+    display: inline-block;
+    &:before {
+      font-family: 'icomoon';
+      color: #222;
+      line-height: 19px;
+      display: block;
+    }
+    &:hover {
       &:before {
-        font-family: 'icomoon';
-        color: #222;
-        line-height: 19px;
-        display: block;
-      }
-      &:hover {
-        &:before {
-          color: #7198b6;
-          transition: 0.2s ease;
-        }
+        color: #7198b6;
+        transition: 0.2s ease;
       }
     }
-    .email-soc:before { content: '\e603'; }
-    .insta-soc:before { content: '\e600'; }
-    .github-soc:before { content: '\e605'; }
-    .linkedin-soc:before { content: '\e606'; }
-    .fb-soc:before { content: '\e604'; }
-    .linkedin-soc:before, .fb-soc:before {
-      line-height: 22px;
-    }
+  }
+  .email-soc:before { content: '\e603'; }
+  .insta-soc:before { content: '\e600'; }
+  .github-soc:before { content: '\e605'; }
+  .linkedin-soc:before { content: '\e606'; }
+  .fb-soc:before { content: '\e604'; }
+  .linkedin-soc:before, .fb-soc:before {
+    line-height: 22px;
   }
 }
